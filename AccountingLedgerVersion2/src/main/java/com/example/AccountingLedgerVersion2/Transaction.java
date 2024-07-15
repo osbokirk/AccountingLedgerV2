@@ -19,7 +19,7 @@ public class Transaction {
         this.time = time;
         this.dateTime = dateTime;
         this.description = description;
-        this.vendor = vendor;
+        this.vendor = vendor ;
         this.amount = amount;
     }
 
