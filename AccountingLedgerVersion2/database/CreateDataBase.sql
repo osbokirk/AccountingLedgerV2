@@ -16,8 +16,8 @@ USE accountingLedger;
 
 CREATE TABLE users (
     transaction_id INT NOT NULL AUTO_INCREMENT,
-    date VARCHAR(50) NOT NULL,
-    time VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
     description VARCHAR(50) NOT NULL,
     vendor VARCHAR(255) NOT NULL,
     amount float NOT NULL,
