@@ -1,16 +1,22 @@
 package com.example.AccountingLedgerVersion2;
 
+import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Transaction {
 
     private LocalDateTime dateTime;
+    private Date date;
+    private Time time;
     private String description;
     private String vendor;
     private double amount;
 
-    public Transaction(LocalDateTime dateTime, String description, String vendor, double amount) {
+    public Transaction(Date date,Time time, String description, String vendor, double amount) {
+        this.date = date;
+        this.time = time;
         this.dateTime = dateTime;
         this.description = description;
         this.vendor = vendor;

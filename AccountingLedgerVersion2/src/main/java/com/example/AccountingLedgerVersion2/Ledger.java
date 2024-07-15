@@ -120,8 +120,9 @@ public class Ledger {
                 String[] data = line.split("\\|");
                 LocalDateTime dateTime = LocalDateTime.parse(data[0] + "|" + data[1], DateTimeFormatter.ofPattern("yyyy-MM-dd|HH:mm:ss"));
                 Double amount = Double.parseDouble(data[4]);
-                Transaction transaction = new Transaction(dateTime, data[2], data[3], amount);
-                transactions.add(transaction);
+                //do not ship
+                //Transaction transaction = new Transaction(dateTime, data[2], data[3], amount);
+                transactions.add(null);
             }
 
         } catch (IOException e) {
