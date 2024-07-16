@@ -14,7 +14,7 @@ USE accountingLedger;
 # Tables                                                                 #
 # ---------------------------------------------------------------------- #
 
-CREATE TABLE users (
+CREATE TABLE transactions (
     transaction_id INT NOT NULL AUTO_INCREMENT,
     date DATE NOT NULL,
     time TIME NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE users (
     vendor VARCHAR(255) NOT NULL,
     amount float NOT NULL,
     PRIMARY KEY (transaction_id)
-)
+);
 INSERT INTO transactions (date, time, description, vendor, amount) VALUES
 ('2024-01-15', '12:30:00', 'Purchase groceries', 'Local Supermarket', 50.25),
 ('2024-02-10', '14:15:00', 'Dinner with friends', 'Restaurant XYZ', 75.50),
