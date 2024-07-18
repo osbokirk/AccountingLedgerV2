@@ -1,6 +1,8 @@
 package com.example.AccountingLedgerVersion2;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 
 public class DAO {
@@ -100,7 +102,7 @@ public class DAO {
     }
     public void addDeposit(String description, String vendor, double amount) throws SQLException {
 
-        String query = "{CALL AddDeposit(?, ?, ?)}";
+        String query = "{CALL AddDeposit(?, ?, ?, ?, ?)}";
 
         try (Connection conn = DatabaseConnection.getConnection();
              CallableStatement statement = conn.prepareCall(query)) {
@@ -108,13 +110,16 @@ public class DAO {
             statement.setString(1, description);
             statement.setString(2, vendor);
             statement.setDouble(3, amount);
+            statement.setDate(4, java.sql.Date.valueOf(LocalDate.now()));
+            statement.setTime(5, java.sql.Time.valueOf(LocalTime.now()));
+
             statement.executeUpdate();
         }
     }
 
     public void makePayment(String description, String vendor, double amount) throws SQLException {
 
-        String query = "{CALL MakePayment(?, ?, ?)}";
+        String query = "{CALL MakePayment(?, ?, ?, ?, ?)}";
 
         try (Connection conn = DatabaseConnection.getConnection();
              CallableStatement statement = conn.prepareCall(query)) {
@@ -122,6 +127,9 @@ public class DAO {
             statement.setString(1, description);
             statement.setString(2, vendor);
             statement.setDouble(3, amount);
+            statement.setDate(4, java.sql.Date.valueOf(LocalDate.now()));
+            statement.setTime(5, java.sql.Time.valueOf(LocalTime.now()));
+
             statement.executeUpdate();
         }
     }
