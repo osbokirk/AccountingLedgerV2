@@ -1,6 +1,7 @@
 package com.example.AccountingLedgerVersion2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +11,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Service
 public class TransactionService {
 
     @Autowired

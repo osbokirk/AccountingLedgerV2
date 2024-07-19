@@ -1,10 +1,12 @@
 package com.example.AccountingLedgerVersion2;
 
+import org.springframework.stereotype.Repository;
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
+@Repository
 public class DAO {
     public ResultSet showAllLedgers() throws SQLException {
 
