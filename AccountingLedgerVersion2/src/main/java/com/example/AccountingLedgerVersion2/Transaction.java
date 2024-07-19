@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Transaction {
 
-    private LocalDateTime dateTime;
+
     private Date date;
     private Time time;
     private String description;
@@ -17,18 +17,25 @@ public class Transaction {
     public Transaction(Date date,Time time, String description, String vendor, double amount) {
         this.date = date;
         this.time = time;
-        this.dateTime = dateTime;
         this.description = description;
         this.vendor = vendor ;
         this.amount = amount;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
     }
 
     public String getDescription() {
@@ -55,14 +62,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String toString() {
-        LocalDateTime dateTime = getDateTime();
-        String formattedDateTime = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd|HH:mm:ss"));
-        String output = formattedDateTime + "|" +getDescription() + "|" + getVendor() + "|" + getAmount();
-        return output;
 
-
-    }
 
 
 
